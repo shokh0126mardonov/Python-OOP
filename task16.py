@@ -1,5 +1,5 @@
 class Book:
-    def __init__(self,title,author,is_read):
+    def __init__(self,title,author,is_read = False):
         self.title = title
         self.author = author
         self.is_read = is_read
@@ -16,18 +16,11 @@ book3 = Book("Sifatli Kod", "Robert C. Martin")
 book4 = Book("Sariq devni minib", "Xudoyberdi To'xtaboyev")
 book5 = Book("Xamsa","Alisher Navoiy")
 
-book2.mark_as_read()
-book1.mark_as_read()
-
 books = [book1,book2,book3,book4,book5]
 
+books[0].mark_as_read()
+books[1].mark_as_read()
 
 for book in books:
-    book.status()
-    
-print("O'qilganlar:")   
-for book in books:
-    if book.is_read:
-        print("O'qilganlar:")
-        
-        
+    if book.status():
+        print(book.title)        
